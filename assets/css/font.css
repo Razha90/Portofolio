@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap')
+
+/* How to Use */
+
+/*
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+.noto-sans-<uniquifier> {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+*/
+
+/* .madimi-one-regular {
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+} */
