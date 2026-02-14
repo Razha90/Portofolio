@@ -1,4 +1,32 @@
 $(function () {
+    // Mobile menu toggle
+    $('#mobile-menu-button').on('click', function () {
+        $('#mobile-menu').toggleClass('max-h-0 opacity-0 max-h-64 opacity-100');
+    });
+
+    // Close mobile menu when a link is clicked
+    $('#mobile-menu a').on('click', function () {
+        $('#mobile-menu').addClass('max-h-0 opacity-0').removeClass('max-h-64 opacity-100');
+    });
+
+    // Close mobile menu when clicking outside
+    $(document).on('click', function (event) {
+        const mobileMenu = $('#mobile-menu');
+        const mobileMenuButton = $('#mobile-menu-button');
+
+        if (!mobileMenu.is(event.target) && mobileMenu.has(event.target).length === 0 &&
+            !mobileMenuButton.is(event.target) && mobileMenuButton.has(event.target).length === 0) {
+            mobileMenu.addClass('max-h-0 opacity-0').removeClass('max-h-64 opacity-100');
+        }
+    });
+
+    // Theme toggle
+    $('#theme-toggle').on('click', function () {
+        $('html').toggleClass('dark');
+        const isDark = $('html').hasClass('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
     $.scrollify({
         section: ".section",
         sectionName: "section-name",
