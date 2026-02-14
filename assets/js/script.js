@@ -40,21 +40,25 @@ $(function () {
 });
 
 function toggleProjects() {
-    const moreProjects = document.getElementById('more-projects');
-    const loadMoreBtn = document.getElementById('load-more-btn-container');
+    const moreProjects = $('#more-projects');
+    const loadMoreBtn = $('#load-more-btn-container');
 
-    if (moreProjects) {
-        moreProjects.classList.remove('hidden');
-        // Re-enable Scrollify update to recalculate heights
+    if (moreProjects.length) {
+        moreProjects.removeClass('hidden');
+
+        // Use Scrollify's update method as per documentation
         if ($.scrollify) {
+            $.scrollify.update();
+
+            // Sometimes a small delay helps recalculate if there are images loading
             setTimeout(function () {
                 $.scrollify.update();
-            }, 100);
+            }, 200);
         }
     }
 
-    if (loadMoreBtn) {
-        loadMoreBtn.style.display = 'none';
+    if (loadMoreBtn.length) {
+        loadMoreBtn.hide();
     }
 }
 
